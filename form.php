@@ -1,9 +1,9 @@
 <?php
 <<<<<<< HEAD
-// Exercise 5: Initialize submission counter
+
 $attempts = isset($_POST['attempts']) ? (int)$_POST['attempts'] + 1 : 0;
 
-// Initialize variables and errors
+
 $name = $email = $gender = $comment = $website = $phone = $pass = $confirm_pass = $terms = "";
 $nameErr = $emailErr = $genderErr = $websiteErr = $phoneErr = $passErr = $termsErr = "";
 =======
@@ -69,18 +69,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { $emailErr = "Invalid email format"; }
     }
 
-    // Exercise 1: Phone Validation
+    Phone Validation
     if (empty($_POST["phone"])) { $phoneErr = "Phone is required"; } 
     else {
         $phone = test_input($_POST["phone"]);
         if (!preg_match("/^[+]?[0-9 \-]{7,15}$/", $phone)) { $phoneErr = "Invalid phone format"; }
     }
 
-    // Exercise 2: Website Validation
+    Website Validation
     $website = test_input($_POST["website"]);
     if (!empty($website) && !filter_var($website, FILTER_VALIDATE_URL)) { $websiteErr = "Invalid URL format"; }
 
-    // Exercise 3: Password Logic
+    Password Logic
     if (empty($_POST["pass"])) { $passErr = "Password is required"; } 
     else {
         $pass = $_POST["pass"];
@@ -88,11 +88,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         elseif ($pass !== $_POST["confirm_pass"]) { $passErr = "Passwords do not match"; }
     }
 
-    // Gender Validation
+     Gender Validation
     if (empty($_POST["gender"])) { $genderErr = "Gender is required"; } 
     else { $gender = test_input($_POST["gender"]); }
 
-    // Exercise 4: Terms Checkbox
+     Terms Checkbox
     if (!isset($_POST['terms'])) { $termsErr = "Terms must be accepted"; } 
     else { $terms = "checked"; }
 
@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>PHP Form Validation</title>
     <style>
     body { 
-        /* The image uses a clean, standard Arial font stack */
+        
         font-family: Arial, Helvetica, sans-serif; 
         background-color: #ffffff; 
         color: #000000; 
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     label { 
         display: block; 
-        /* Labels in the image are slightly larger and standard weight */
+        
         font-size: 18px; 
         font-weight: 500;
         margin-top: 22px; 
